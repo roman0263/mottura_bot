@@ -8,7 +8,7 @@ from telegram.ext import (
 )
 from dotenv import load_dotenv
 import os
-from .database import db
+from database import db
 from .handlers import start, products
 
 # Загрузка переменных окружения
