@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e86e3504-5251-4897-8035-3b3d3de5a12a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot/database/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/database/db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot/database/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/database/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot/handlers/products.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/handlers/products.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot/handlers/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/handlers/start.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +20,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
