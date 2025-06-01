@@ -1,56 +1,98 @@
-# Virtual environments
+### Python ###
+# Виртуальные окружения
 .venv/
 venv/
+env/
 
-# Environment variables
-.env
-
-# Python cache and compiled files
+# Кэш и скомпилированные файлы Python
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
 *.pyd
-*.pyc
+*.so
+.Python
 
-# Database files
+### Безопасность ###
+# Файлы с переменными окружения и секретами
+.env
+.env.local
+.env.*.local
+secrets.yml
+config.yml
+
+### Базы данных ###
+# SQLite и другие файлы БД
 *.sqlite
 *.sqlite3
 *.db
 *.db-journal
+*.sql
+*.dump
 
-# Log files
+### Логи ###
 *.log
 logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# IDE and editor settings
+### Alembic ###
+# Исключаем только версии миграций, но оставляем конфиги
+/alembic/versions/
+!.alembic/
+!alembic.ini
+
+### IDE ###
+# PyCharm
 .idea/
+*.iml
+*.ipr
+*.iws
+
+# VS Code
 .vscode/
-*.sublime-project
-*.sublime-workspace
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
-# OS metadata
+### Системные файлы ###
+# macOS
 .DS_Store
-Thumbs.db
+.AppleDouble
+.LSOverride
 
-# Build and distribution artifacts
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+### Build & Distribution ###
+# Python packaging
 build/
 dist/
 *.egg-info/
-__pycache__/
+*.egg
+*.whl
 
-# Testing artifacts
+# Cython
+*.c
+
+### Тестирование ###
 .coverage
 htmlcov/
 .pytest_cache/
+.mypy_cache/
+*.cover
+*.mo
+*.pot
 
-# Jupyter notebooks
-.ipynb_checkpoints/
-
-# Python packaging
-*.egg
-*.wheel
-
-# Temp files
+### Прочее ###
+# Временные файлы
 *.tmp
+*.bak
 *~
 ~$*
+
+# Jupyter
+.ipynb_checkpoints/
