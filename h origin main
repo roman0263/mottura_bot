@@ -1,0 +1,29 @@
+[33mcommit 5249975d9994b4d744e7e53bd76c792d0414dfd2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: roman0263 <160611060+roman0263@users.noreply.github.com>
+Date:   Sun Jun 1 02:20:58 2025 +0300
+
+    Backup before restructuring
+
+[1mdiff --git a/bot/main.py b/bot/main.py[m
+[1mindex 525b3de..fb28439 100644[m
+[1m--- a/bot/main.py[m
+[1m+++ b/bot/main.py[m
+[36m@@ -8,7 +8,7 @@[m [mfrom telegram.ext import ([m
+ )[m
+ from dotenv import load_dotenv[m
+ import os[m
+[31m-from .database import db[m
+[32m+[m[32mfrom database import db[m
+ from .handlers import start, products[m
+ [m
+ # Загрузка переменных окружения[m
+[1mdiff --git a/requirements.txt b/requirements.txt[m
+[1mindex e69de29..57e1331 100644[m
+[1m--- a/requirements.txt[m
+[1m+++ b/requirements.txt[m
+[36m@@ -0,0 +1,4 @@[m
+[32m+[m[32m# requirements.txt[m
+[32m+[m[32mpython-telegram-bot==20.5[m
+[32m+[m[32mhttpx==0.27.0[m
+[32m+[m[32mhttpcore==0.17.3[m
+\ No newline at end of file[m

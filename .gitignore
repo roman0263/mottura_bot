@@ -1,5 +1,56 @@
+# Virtual environments
+.venv/
+venv/
+
+# Environment variables
 .env
+
+# Python cache and compiled files
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+*.pyc
+
+# Database files
 *.sqlite
-venv/
+*.sqlite3
+*.db
+*.db-journal
+
+# Log files
+*.log
+logs/
+
+# IDE and editor settings
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Build and distribution artifacts
+build/
+dist/
+*.egg-info/
+__pycache__/
+
+# Testing artifacts
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# Python packaging
+*.egg
+*.wheel
+
+# Temp files
+*.tmp
+*~
+~$*

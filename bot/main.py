@@ -1,46 +1,57 @@
 import logging
-from telegram import Update
-from telegram.ext import (
-    ApplicationBuilder,
-    CommandHandler,
-    MessageHandler,
-    filters
-)
-from dotenv import load_dotenv
-import os
-from database import db
-from .handlers import start, products
+from telegram.ext import ApplicationBuilder, CommandHandler
 
-# Загрузка переменных окружения
-load_dotenv()
+# Абсолютные импорты
+from bot.handlers.start import handle_start
+from bot.handlers.products import handle_products
+from bot.database.db import init_db
+from config.settings import settings
 
 # Инициализация логгера
-logging.basicConfig(
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    level=logging.INFO
-)
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+handler = logging.StreamHandler()
+handler.setFormatter(logging.Formatter(
+    '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+))
+logger.addHandler(handler)
 
 
-async def init(application):
+async def init_app(application):
     """Инициализация при запуске"""
-    await application.bot.set_my_commands([
-        ('start', 'Запустить бота'),
-        ('products', 'Список товаров')
-    ])
-    db.init_db()  # Создаем таблицы в БД
-    logging.info("Database initialized")
+    try:
+        await application.bot.set_my_commands([
+            ('start', 'Запустить бота'),
+            ('products', 'Список товаров')
+        ])
+        init_db()
+        logger.info("Application initialized successfully")
+    except Exception as e:
+        logger.critical(f"Initialization failed: {e}")
+        raise
 
 
 def main():
-    # Создаем приложение бота
-    application = ApplicationBuilder().token(os.getenv("BOT_TOKEN")).post_init(init).build()
+    """Основная функция запуска бота"""
+    try:
+        logger.info("Starting bot initialization...")
 
-    # Регистрируем обработчики
-    application.add_handler(CommandHandler("start", start.handle_start))
-    application.add_handler(CommandHandler("products", products.handle_products))
+        application = (
+            ApplicationBuilder()
+            .token(settings.BOT_TOKEN)
+            .post_init(init_app)
+            .build()
+        )
 
-    # Запускаем бота
-    application.run_polling()
+        # Регистрация обработчиков
+        application.add_handler(CommandHandler("start", handle_start))
+        application.add_handler(CommandHandler("products", handle_products))
+
+        logger.info("Bot started. Press Ctrl+C to stop")
+        application.run_polling()
+
+    except Exception as e:
+        logger.exception(f"Bot crashed: {e}")
 
 
 if __name__ == '__main__':
