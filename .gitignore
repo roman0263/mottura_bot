@@ -1,5 +1,98 @@
-.env
-__pycache__/
-*.pyc
-*.sqlite
+### Python ###
+# Виртуальные окружения
+.venv/
 venv/
+env/
+
+# Кэш и скомпилированные файлы Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.Python
+
+### Безопасность ###
+# Файлы с переменными окружения и секретами
+.env
+.env.local
+.env.*.local
+secrets.yml
+config.yml
+
+### Базы данных ###
+# SQLite и другие файлы БД
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.sql
+*.dump
+
+### Логи ###
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+### Alembic ###
+# Исключаем только версии миграций, но оставляем конфиги
+/alembic/versions/
+!.alembic/
+!alembic.ini
+
+### IDE ###
+# PyCharm
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### Системные файлы ###
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+### Build & Distribution ###
+# Python packaging
+build/
+dist/
+*.egg-info/
+*.egg
+*.whl
+
+# Cython
+*.c
+
+### Тестирование ###
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+*.cover
+*.mo
+*.pot
+
+### Прочее ###
+# Временные файлы
+*.tmp
+*.bak
+*~
+~$*
+
+# Jupyter
+.ipynb_checkpoints/

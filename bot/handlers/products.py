@@ -1,19 +1,19 @@
 from telegram import Update
 from telegram.ext import ContextTypes
-from bot.database.db import get_db
-from bot.database.models import Product
+from bot.database.db import SessionLocal  # Исправленный импорт
+from bot.database.models import Product  # Импорт модели
 
 
 async def handle_products(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    db = next(get_db())
-    products = db.query(Product).all()
+    with SessionLocal() as session:
+        products = session.query(Product).all()
 
-    if not products:
-        await update.message.reply_text("Товары отсутствуют 😢")
-        return
+        if not products:
+            await update.message.reply_text("Товары не найдены.")
+            return
 
-    response = "🔧 Доступные цилиндры:\n\n"
-    for product in products:
-        response += f"• {product.name} - {product.price} руб.\n"
+        response = "📦 Список товаров:\n\n"
+        for product in products:
+            response += f"• {product.name} - {product.price}₽\n"
 
-    await update.message.reply_text(response)
+        await update.message.reply_text(response)
