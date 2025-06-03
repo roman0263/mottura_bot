@@ -1,0 +1,22 @@
+./
+    bot_data.sqlite
+    export_structure.py
+    main.py
+    project_structure.txt
+    __init__.py
+    database/
+        db.py
+        models.py
+        repository.py
+        __init__.py
+        __pycache__/
+    handlers/
+        admin.py
+        products.py
+        start.py
+        __init__.py
+        __pycache__/
+    utils/
+        csv_validator.py
+        __init__.py
+    __pycache__/
